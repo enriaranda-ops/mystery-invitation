@@ -1,2 +1,0 @@
-# mystery-invitation
-xxxxxxxx
