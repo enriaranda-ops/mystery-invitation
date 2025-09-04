@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mysterious Invitation</title>
+<style>
+  /* Body & Background */
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #0a0a0a, #1c1c1c);
+    font-family: 'Courier New', monospace;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  /* Mystery Image */
+  #mysteryImage {
+    max-width: 400px;
+    border: 2px solid #eee;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    transition: transform 0.5s ease, filter 0.5s ease;
+    margin-bottom: 20px;
+  }
+  #mysteryImage:hover {
+    transform: scale(1.05) rotate(-1deg);
+    filter: brightness(1.1);
+  }
+
+  /* Continue prompt */
+  #prompt {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+
+  /* Cryptic message */
+  #cryptic {
+    font-family: 'Papyrus', cursive;
+    font-size: 1.5em;
+    color: #f5f5f5;
+    display: none;
+    margin-bottom: 20px;
+    animation: fadein 0.5s forwards;
+  }
+
+  @keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Invitation Text */
+  #invitation {
+    max-width: 600px;
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    font-size: 1em;
+    line-height: 1.5em;
+    display: none;
+  }
+
+  .flicker {
+    opacity: 0.8;
+    animation: flicker 1.5s infinite;
+  }
+  @keyframes flicker {
+    0%,19%,21%,23%,25%,54%,56%,100% { opacity: 0.8; }
+    20%,22%,24%,55% { opacity: 1; }
+  }
+
+  /* Signature */
+  #signature {
+    margin-top: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 1em;
+    display: none;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Mystery Image -->
+<img id="mysteryImage" src="https://d7hftxdivxxvm.cloudfront.net/?quality=80&resize_to=width&src=https%3A%2F%2Fartsy-media-uploads.s3.amazonaws.com%2FsXagkmLM5_U0E5_QtvBsJA%252F2006AD0270_2500.jpg&width=1820" alt="Mysterious Image">
+
+<!-- Continue Prompt -->
+<div id="prompt">continue? [y/n]</div>
+
+<!-- Cryptic Message -->
+<div id="cryptic">you’ve opened the door</div>
+
+<!-- Invitation Text -->
+<div id="invitation">
+𝚃𝚑𝚎𝚛𝚎 𝚠𝚊𝚜 𝚊 𝚜𝚞𝚗𝚜𝚎𝚝 𝚊𝚗𝚍 𝚝𝚑𝚎𝚗 𝚝𝚑𝚎𝚛𝚎 𝚠𝚊𝚜𝚗'𝚝,
+𝚊𝚗𝚍 𝚊𝚌𝚛𝚘𝚜𝚜 𝚝𝚘𝚠𝚗 𝚠𝚊𝚜 𝚊 𝚛𝚘𝚘𝚖 𝚖𝚊𝚍𝚎 𝚘𝚏 𝚠𝚒𝚗𝚍𝚘𝚠𝚜. 
+𝙸𝚗 𝚒𝚝 𝚠𝚎 𝚠𝚎𝚛𝚎 𝚒𝚗 𝚊 𝚙𝚒𝚝, 𝚢𝚘𝚞 𝚔𝚗𝚘𝚠 𝚝𝚑𝚎 𝚘𝚗𝚎 𝚠𝚎 𝚍𝚛𝚎𝚊𝚖𝚝 𝚊𝚗𝚍 𝚋𝚞𝚒𝚕𝚝 𝚊𝚗𝚍 𝚔𝚎𝚙𝚝 𝚋𝚢 𝚝𝚑𝚎 𝚠𝚒𝚗𝚍𝚘𝚠𝚜. 
+
+𝙰𝚜 𝚠𝚎 𝚕𝚊𝚢 𝚝𝚑𝚎𝚛𝚎 𝚎𝚟𝚎𝚛𝚢𝚝𝚑𝚒𝚗𝚐 𝚏𝚎𝚕𝚕 𝚊𝚠𝚊𝚢— 
+𝙸 𝚖𝚎𝚊𝚗 𝚎𝚟𝚎𝚛𝚢 𝚜𝚒𝚗𝚐𝚕𝚎 𝚝𝚑𝚒𝚗𝚐, 
+𝚞𝚗𝚝𝚒𝚕 𝚘𝚗𝚕𝚢 𝚝𝚑𝚎 𝚠𝚒𝚗𝚍𝚘𝚠𝚜 𝚛𝚎𝚖𝚊𝚒𝚗𝚎𝚍. 𝙰𝚗𝚍 𝚋𝚎𝚑𝚒𝚗𝚍 𝚝𝚑𝚎𝚖, 𝚊 𝚠𝚘𝚛𝚕𝚍 𝚠𝚊𝚒𝚝𝚒𝚗𝚐, 
+𝚊 𝚠𝚘𝚛𝚕𝚍 𝚘𝚞𝚝𝚜𝚒𝚍𝚎 𝚠𝚑𝚊𝚝 𝚠𝚎 𝚌𝚘𝚞𝚕𝚍 𝚋𝚞𝚒𝚕𝚍. 
+
+𝙸𝚝 𝚒𝚜 𝚝𝚘 𝚝𝚑𝚊𝚝 𝚠𝚘𝚛𝚕𝚍 𝙸 𝚊𝚖 𝚌𝚊𝚕𝚕𝚒𝚗𝚐 𝚢𝚘𝚞,
+𝚝𝚘 𝚜𝚝𝚎𝚙 𝚝𝚑𝚛𝚘𝚞𝚐𝚑 𝚝𝚑𝚎 𝚐𝚕𝚊𝚜𝚜, 
+𝚝𝚘 𝚏𝚒𝚗𝚍 𝚖𝚎 𝚠𝚑𝚎𝚛𝚎 𝚜𝚑𝚊𝚍𝚘𝚠𝚜 𝚖𝚎𝚎𝚝 𝚝𝚑𝚎𝚒𝚛 𝚖𝚒𝚛𝚛𝚘𝚛. 
+𝚃𝚑𝚎 𝚍𝚘𝚘𝚛 𝚒𝚜 𝚖𝚊𝚛𝚔𝚎𝚍 𝚠𝚒𝚝𝚑 𝚞𝚗𝚒𝚝𝚢, 
+𝚝𝚑𝚎 𝚑𝚘𝚞𝚜𝚎 𝚝𝚑𝚊𝚝 𝚌𝚊𝚛𝚛𝚒𝚎𝚜 𝚒𝚝𝚜 𝚗𝚊𝚖𝚎. 
+
+𝚃𝚑𝚎 𝚑𝚘𝚞𝚛 𝚒𝚜 𝚝𝚠𝚒𝚗 𝚘𝚗𝚎𝚜 𝚜𝚝𝚊𝚗𝚍𝚒𝚗𝚐 𝚜𝚒𝚍𝚎 𝚋𝚢 𝚜𝚒𝚍𝚎, 
+𝚓𝚞𝚜𝚝 𝚋𝚎𝚏𝚘𝚛𝚎 𝚗𝚒𝚐𝚑𝚝 𝚝𝚒𝚙𝚜 𝚒𝚗𝚝𝚘 𝚝𝚘𝚖𝚘𝚛𝚛𝚘𝚠. 
+𝙲𝚘𝚖𝚎 𝚝𝚘 𝚝𝚑𝚎 𝚛𝚘𝚘𝚖, 𝚌𝚘𝚖𝚎 𝚝𝚘 𝚝𝚑𝚎 𝚙𝚒𝚝, 
+𝚌𝚘𝚖𝚎 𝚠𝚑𝚎𝚛𝚎 𝚠𝚎 𝚠𝚒𝚕𝚕 𝚕𝚎𝚝 𝚎𝚟𝚎𝚛𝚢𝚝𝚑𝚒𝚗𝚐 𝚎𝚕𝚜𝚎 𝚏𝚊𝚕𝚕 𝚊𝚠𝚊𝚢. 
+𝙱𝚛𝚒𝚗𝚐 𝚢𝚘𝚞𝚛𝚜𝚎𝚕𝚏, 𝚗𝚘𝚝𝚑𝚒𝚗𝚐 𝚖𝚘𝚛𝚎-
+𝚊𝚗𝚍 𝚊𝚕𝚕 𝚝𝚑𝚊𝚝 𝚠𝚒𝚕𝚕 𝚋𝚎 𝚕𝚎𝚏𝚝 𝚠𝚒𝚕𝚕 𝚋𝚎 𝚞𝚜, 
+𝚊𝚗𝚍 𝚝𝚑𝚎 𝚠𝚘𝚛𝚕𝚍 𝚠𝚎 𝚖𝚊𝚔𝚎 𝚏𝚘𝚛 𝚘𝚗𝚎 𝚗𝚒𝚐𝚑𝚝.
+</div>
+
+<!-- Signature -->
+<div id="signature">xx,                                                                  enri</div>
+
+<script>
+const promptDiv = document.getElementById('prompt');
+const cryptic = document.getElementById('cryptic');
+const invitation = document.getElementById('invitation');
+const signature = document.getElementById('signature');
+
+document.addEventListener('keydown', function(e) {
+  if(e.key.toLowerCase() === 'y'){
+    // Hide prompt
+    promptDiv.style.display = 'none';
+    // Show cryptic message
+    cryptic.style.display = 'block';
+
+    // After 2 seconds, hide cryptic and show invitation
+    setTimeout(() => {
+      cryptic.style.display = 'none';
+      invitation.style.display = 'block';
+      signature.style.display = 'block';
+
+      // Typewriter flicker effect
+      let text = invitation.innerText;
+      invitation.innerText = '';
+      let i = 0;
+      function type() {
+        if(i < text.length){
+          let char = text.charAt(i);
+          invitation.innerHTML += `<span class="flicker">${char}</span>`;
+          i++;
+          setTimeout(type, 30 + Math.random()*30);
+        }
+      }
+      type();
+
+    }, 2000);
+  } else if(e.key.toLowerCase() === 'n'){
+    promptDiv.innerText = "The door remains closed...";
+  }
+});
+</script>
+
+</body>
+</html>
